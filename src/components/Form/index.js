@@ -9,15 +9,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 // == Composant
-const Form = ({ inputValue, changeInputValue }) => {
+const Form = ({ inputValue, changeInputValue, submitNewMessage }) => {
   const handleChange = (event) => {
-    console.log(event);
-    // Ici j'ai l'intention de changer la valeur du champ
     changeInputValue(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    submitNewMessage(inputValue);
+  };
+
   return (
-    <form className="form">
+    <form
+      className="form"
+      onSubmit={handleSubmit}
+    >
       <input
         type="text"
         placeholder="Saisissez votre message..."
@@ -37,11 +43,13 @@ const Form = ({ inputValue, changeInputValue }) => {
 Form.propTypes = {
   inputValue: PropTypes.string,
   changeInputValue: PropTypes.func,
+  submitNewMessage: PropTypes.func,
 };
 
 Form.defaultProps = {
   inputValue: '',
   changeInputValue: () => {},
+  submitNewMessage: () => {},
 };
 
 // == Export

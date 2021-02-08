@@ -1,5 +1,6 @@
 import {
   CHANGE_INPUT_VALUE,
+  SUBMIT_NEW_MESSAGE,
 } from '../actions';
 
 const INITIAL_STATE = {
@@ -13,6 +14,11 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
       return {
         ...state,
         inputValue: action.inputValue,
+      };
+    case SUBMIT_NEW_MESSAGE:
+      return {
+        ...state,
+        messages: [...state.messages, action.inputValue],
       };
     default:
       return state;
