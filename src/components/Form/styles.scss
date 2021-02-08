@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 700px;
+
+  & > input {
+    width: 100%;
+    padding: 1.5rem;
+    border: 0px;
+    font-size: 1rem;
+    color: #13405d;
+  }
+
+  & > button {
+    background-color: white;
+    border: 0px;
+  }
+
+  .submit__icon {
+    color: #13405d;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+  }
+}
