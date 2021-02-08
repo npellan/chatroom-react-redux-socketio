@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import PropTypes, { string } from 'prop-types';
 
 // == Import
 import './styles.scss';
@@ -7,14 +8,14 @@ import './styles.scss';
 import Message from './Message';
 
 // == Composant
-const Messages = () => {
-  const fakeMessages = ['Salut ça va ?', 'Moi ça va super bien', 'Réponds stp'];
+const Messages = ({ messages }) => (
+  <div className="messages">
+    {messages.map((message) => <Message sender="Super Chat" content={message} />)}
+  </div>
+);
 
-  return (
-    <div className="messages">
-      {fakeMessages.map((message) => <Message sender="Super Chat" content={message} />)}
-    </div>
-  );
+Messages.propTypes = {
+  messages: PropTypes.arrayOf(string).isRequired,
 };
 
 // == Export
