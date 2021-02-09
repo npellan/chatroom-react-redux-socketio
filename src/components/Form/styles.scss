@@ -2,27 +2,28 @@
 
 .form {
   display: flex;
-  position: absolute;
-  bottom: 0;
-  width: 700px;
-  height: 75px;
 
   & > input {
-    width: 100%;
-    padding: 1.5rem;
-    border: 0px;
+    height: 5rem;
+    border: 0;
+    flex: 1;
+    padding: 2rem;
     font-size: 1rem;
-    color: vars.$color-dark;
+    color: vars.$dark-blue;
   }
 
   & > button {
-    background-color: white;
+    background-color: vars.$light-color;
     border: 0px;
   }
 
   .submit__icon {
-    color: vars.$color-dark;
+    color: vars.$normal-blue;
     margin-right: 1rem;
     font-size: 1.5rem;
+
+    &:hover{
+      color: vars.$dark-blue;
+    }
   }
 }
