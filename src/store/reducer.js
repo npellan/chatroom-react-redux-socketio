@@ -4,7 +4,23 @@ import {
 } from '../actions';
 
 const INITIAL_STATE = {
-  messages: ['Salut ça va ?', 'Moi ça va super bien', 'Réponds stp'],
+  messages: [
+    {
+      id: 1,
+      sender: 'Moi',
+      content: 'Salut ça va ?',
+    },
+    {
+      id: 1,
+      sender: 'Moi',
+      content: 'Salut ça va ?',
+    },
+    {
+      id: 1,
+      sender: 'Moi',
+      content: 'Salut ça va ?',
+    },
+  ],
   inputValue: '',
 };
 
