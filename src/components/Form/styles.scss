@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .form {
   display: flex;
   position: absolute;
@@ -10,7 +12,7 @@
     padding: 1.5rem;
     border: 0px;
     font-size: 1rem;
-    color: #13405d;
+    color: vars.$color-dark;
   }
 
   & > button {
@@ -19,7 +21,7 @@
   }
 
   .submit__icon {
-    color: #13405d;
+    color: vars.$color-dark;
     margin-right: 1rem;
     font-size: 1.5rem;
   }

@@ -1,5 +1,7 @@
+@use 'src/styles/vars';
+
 .chatroom {
-  background-color: #bddcf0;
+  background-color: vars.$color-light;
   margin: auto;
   width: 700px;
   min-height: 100vh;
