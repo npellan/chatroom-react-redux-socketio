@@ -10,7 +10,15 @@ import Message from './Message';
 // == Composant
 const Messages = ({ messages }) => (
   <div className="messages">
-    {messages.map((message) => <Message key={message.id} sender={message.sender} content={message.content} />)}
+    {messages.map(
+      (message) => (
+        <Message
+          key={message.id}
+          sender={message.sender}
+          content={message.content}
+        />
+      ),
+    )}
     <Message sender="Ami" content="Ouais grave bien" isFriend />
   </div>
 );
