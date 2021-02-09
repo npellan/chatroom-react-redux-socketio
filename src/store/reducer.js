@@ -1,4 +1,8 @@
 import {
+  getMaxId,
+} from 'src/selectors';
+
+import {
   CHANGE_INPUT_VALUE,
   SUBMIT_NEW_MESSAGE,
 } from '../actions';
@@ -45,7 +49,10 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
         ...state,
         inputValue: '',
         messages: [...state.messages, {
-          id: 10, sender: 'Moi', content: action.inputValue, isFriend: false,
+          id: (getMaxId(state.messages) + 1),
+          sender: 'Moi',
+          content: action.inputValue,
+          isFriend: false,
         }],
       };
     default:
