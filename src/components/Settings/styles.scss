@@ -1,0 +1,49 @@
+@use 'src/styles/vars';
+
+.settings {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  padding: 1.5rem;
+
+  &__openclose {
+    height: 16px;
+    width: 16px;
+    border: 0;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: vars.$light-color;
+
+    & svg {
+      margin: -8px 8px 8px -8px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+
+    & .settings__input {
+      border: 0;
+      border-radius: 5px;
+      padding: 0.5rem;
+      margin-bottom: 5px;
+      color: vars.$dark-blue;
+    }
+
+    & .settings__submit {
+      background-color: vars.$flashy-blue;
+      border: 0;
+      border-radius: 5px;
+      padding: 0.5rem;
+      margin-top: 5px;
+      color: white;
+    }
+  }
+}
