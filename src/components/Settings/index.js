@@ -8,9 +8,19 @@ import classNames from 'classnames';
 import './styles.scss';
 
 // == Composant
-const Settings = ({ toggleSettings, settingsOpen }) => {
+const Settings = ({
+  toggleSettings, settingsOpen, changeEmailValue, changePwdValue, emailValue, pwdValue,
+}) => {
   const openCloseSettings = () => {
     toggleSettings();
+  };
+
+  const handleEmailChange = (event) => {
+    changeEmailValue(event.target.value);
+  };
+
+  const handlePwdChange = (event) => {
+    changePwdValue(event.target.value);
   };
 
   return (
@@ -29,11 +39,15 @@ const Settings = ({ toggleSettings, settingsOpen }) => {
           type="email"
           className="settings__input"
           placeholder="Email"
+          onChange={handleEmailChange}
+          value={emailValue}
         />
         <input
           type="password"
           className="settings__input"
           placeholder="Mot de passe"
+          onChange={handlePwdChange}
+          value={pwdValue}
         />
         <button
           type="submit"
@@ -49,11 +63,19 @@ const Settings = ({ toggleSettings, settingsOpen }) => {
 Settings.propTypes = {
   settingsOpen: PropTypes.bool,
   toggleSettings: PropTypes.func,
+  changeEmailValue: PropTypes.func,
+  changePwdValue: PropTypes.func,
+  emailValue: PropTypes.string,
+  pwdValue: PropTypes.string,
 };
 
 Settings.defaultProps = {
   settingsOpen: false,
   toggleSettings: () => {},
+  changeEmailValue: () => {},
+  changePwdValue: () => {},
+  emailValue: '',
+  pwdValue: '',
 };
 
 // == Export

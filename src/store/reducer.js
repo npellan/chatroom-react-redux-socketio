@@ -6,6 +6,8 @@ import {
   CHANGE_INPUT_VALUE,
   SUBMIT_NEW_MESSAGE,
   TOGGLE_SETTINGS,
+  CHANGE_EMAIL_VALUE,
+  CHANGE_PWD_VALUE,
 } from '../actions';
 
 const INITIAL_STATE = {
@@ -37,6 +39,8 @@ const INITIAL_STATE = {
   ],
   inputValue: '',
   settingsOpen: false,
+  emailValue: '',
+  pwdValue: '',
 };
 
 const reducer = (state = INITIAL_STATE, action = {}) => {
@@ -61,6 +65,16 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
       return {
         ...state,
         settingsOpen: !state.settingsOpen,
+      };
+    case CHANGE_EMAIL_VALUE:
+      return {
+        ...state,
+        emailValue: action.emailValue,
+      };
+    case CHANGE_PWD_VALUE:
+      return {
+        ...state,
+        pwdValue: action.pwdValue,
       };
     default:
       return state;
