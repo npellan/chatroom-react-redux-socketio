@@ -16,10 +16,10 @@ const Messages = ({ messages }) => (
           key={message.id}
           sender={message.sender}
           content={message.content}
+          isFriend={message.isFriend}
         />
       ),
     )}
-    <Message sender="Ami" content="Ouais grave bien" isFriend />
   </div>
 );
 
