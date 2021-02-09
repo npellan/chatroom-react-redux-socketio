@@ -30,17 +30,6 @@
       margin: 1rem;
       display: block;
       position: relative;
-      
-      &::after {
-        content: "";
-        margin-left: auto;
-        position: absolute;
-        right: 1em;
-        display: block;
-        width:0;
-        border-bottom: 1rem solid vars.$light-color;
-        border-left: 1rem solid transparent;
-      }
     }
 
     &__content {
@@ -57,13 +46,6 @@
       & .message__content {
         background: vars.$dark-blue;
         color: vars.$light-blue;
-      }
-      & .message__sender {
-        &::after {
-          left: 1em;
-          right: auto;
-          border-bottom-color: vars.$dark-blue;
-        }
       }
     }
   }
