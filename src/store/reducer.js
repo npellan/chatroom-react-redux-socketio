@@ -5,6 +5,7 @@ import {
 import {
   CHANGE_INPUT_VALUE,
   SUBMIT_NEW_MESSAGE,
+  TOGGLE_SETTINGS,
 } from '../actions';
 
 const INITIAL_STATE = {
@@ -35,6 +36,7 @@ const INITIAL_STATE = {
     },
   ],
   inputValue: '',
+  settingsOpen: false,
 };
 
 const reducer = (state = INITIAL_STATE, action = {}) => {
@@ -54,6 +56,11 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
           content: action.inputValue,
           isFriend: false,
         }],
+      };
+    case TOGGLE_SETTINGS:
+      return {
+        ...state,
+        settingsOpen: !state.settingsOpen,
       };
     default:
       return state;

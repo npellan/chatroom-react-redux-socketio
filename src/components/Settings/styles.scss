@@ -15,8 +15,12 @@
     border-radius: 50%;
     background-color: vars.$light-color;
 
+    &--closed svg {
+      transform: rotate(45deg);
+    }
+
     & svg {
-      margin: -8px 8px 8px -8px;
+      margin: -8px 8px 8px -8px;      
     }
 
     &:hover {
@@ -44,6 +48,10 @@
       padding: 0.5rem;
       margin-top: 5px;
       color: white;
+    }
+
+    &--closed {
+      display: none;
     }
   }
 }
