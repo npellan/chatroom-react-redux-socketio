@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // == Import
@@ -10,6 +10,12 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 // == Composant
 const Form = ({ inputValue, changeInputValue, submitNewMessage }) => {
+  const inputEl = useRef(null);
+
+  useEffect(() => {
+    inputEl.current.focus();
+  }, []);
+
   const handleChange = (event) => {
     changeInputValue(event.target.value);
   };
@@ -25,6 +31,7 @@ const Form = ({ inputValue, changeInputValue, submitNewMessage }) => {
       onSubmit={handleSubmit}
     >
       <input
+        ref={inputEl}
         type="text"
         placeholder="Saisissez votre message..."
         value={inputValue}
