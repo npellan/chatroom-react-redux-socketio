@@ -43,6 +43,7 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
     case SUBMIT_NEW_MESSAGE:
       return {
         ...state,
+        inputValue: '',
         messages: [...state.messages, {
           id: 10, sender: 'Moi', content: action.inputValue, isFriend: false,
         }],
