@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // == Import
 import './styles.scss';
 
-import Message from './Message';
+import Message from 'src/containers/Messages/Message';
 
 // == Composant
 const Messages = ({ messages }) => {

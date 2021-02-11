@@ -14,31 +14,28 @@ const INITIAL_STATE = {
   messages: [
     {
       id: 1,
-      sender: 'Moi',
+      sender: 'Ami',
       content: 'Salut ça va ?',
-      isFriend: false,
     },
     {
       id: 2,
-      sender: 'Moi',
+      sender: 'Ami',
       content: 'Salut ça va ?',
-      isFriend: false,
     },
     {
       id: 3,
-      sender: 'Moi',
+      sender: 'Ami',
       content: 'Salut ça va ?',
-      isFriend: false,
     },
     {
       id: 4,
-      sender: 'Ami',
+      sender: 'Me',
       content: 'Ouais grave bien merci',
-      isFriend: true,
     },
   ],
   inputValue: '',
   settingsOpen: false,
+  pseudo: 'Me',
   emailValue: '',
   pwdValue: '',
 };
@@ -56,7 +53,7 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
         inputValue: '',
         messages: [...state.messages, {
           id: (getMaxId(state.messages) + 1),
-          sender: 'Moi',
+          sender: state.pseudo,
           content: action.inputValue,
           isFriend: false,
         }],
