@@ -15,27 +15,27 @@ const INITIAL_STATE = {
     {
       id: 1,
       sender: 'Ami',
-      content: 'Salut ça va ?',
+      content: 'Salut !',
     },
     {
       id: 2,
       sender: 'Ami',
-      content: 'Salut ça va ?',
+      content: 'Pfiou quel temps !',
     },
     {
       id: 3,
       sender: 'Ami',
-      content: 'Salut ça va ?',
+      content: 'T\'as passé une bonne journée ?',
     },
     {
       id: 4,
-      sender: 'Me',
-      content: 'Ouais grave bien merci',
+      sender: 'Moi',
+      content: 'Ouais super merci !',
     },
   ],
   inputValue: '',
   settingsOpen: false,
-  pseudo: 'Me',
+  pseudo: 'Moi',
   emailValue: '',
   pwdValue: '',
 };
