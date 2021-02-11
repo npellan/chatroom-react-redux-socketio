@@ -24,7 +24,7 @@ const Settings = ({
   };
 
   return (
-    <div className="settings">
+    <div className={classNames('settings', { 'settings--closed': !settingsOpen })}>
       <button
         type="button"
         className={classNames('settings__openclose', { 'settings__openclose--closed': !settingsOpen })}

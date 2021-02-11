@@ -6,6 +6,12 @@
   right: 0;
   display: flex;
   padding: 1.5rem;
+  z-index: 2;
+  transition: transform .5s ease-in-out;
+
+  &--closed {
+    transform: translateX(calc(100% - 80px));
+  }
 
   &__openclose {
     height: 16px;
@@ -47,7 +53,7 @@
       border-radius: 5px;
       padding: 0.5rem;
       margin-top: 5px;
-      color: white;
+      color: vars.$light-color;
     }
 
     &--closed {
