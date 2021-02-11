@@ -8,9 +8,9 @@ import {
 } from 'src/actions';
 
 const mapStateToProps = (state) => ({
-  settingsOpen: state.settingsOpen,
-  emailValue: state.emailValue,
-  pwdValue: state.pwdValue,
+  settingsOpen: state.settings.settingsOpen,
+  emailValue: state.settings.emailValue,
+  pwdValue: state.settings.pwdValue,
 });
 
 const mapDispatchToProps = (dispatch) => ({

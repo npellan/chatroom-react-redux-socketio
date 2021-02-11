@@ -27,17 +27,14 @@ const INITIAL_STATE = {
       sender: 'Ami',
       content: 'T\'as passé une bonne journée ?',
     },
-    {
-      id: 4,
-      sender: 'Moi',
-      content: 'Ouais super merci !',
-    },
   ],
-  inputValue: '',
-  settingsOpen: false,
   pseudo: 'Moi',
-  emailValue: '',
-  pwdValue: '',
+  inputValue: '',
+  settings: {
+    settingsOpen: false,
+    emailValue: '',
+    pwdValue: '',
+  },
 };
 
 const reducer = (state = INITIAL_STATE, action = {}) => {
@@ -61,17 +58,26 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
     case TOGGLE_SETTINGS:
       return {
         ...state,
-        settingsOpen: !state.settingsOpen,
+        settings: {
+          ...state.settings,
+          settingsOpen: !state.settings.settingsOpen,
+        },
       };
     case CHANGE_EMAIL_VALUE:
       return {
         ...state,
-        emailValue: action.emailValue,
+        settings: {
+          ...state.settings,
+          emailValue: action.emailValue,
+        },
       };
     case CHANGE_PWD_VALUE:
       return {
         ...state,
-        pwdValue: action.pwdValue,
+        settings: {
+          ...state.settings,
+          pwdValue: action.pwdValue,
+        },
       };
     default:
       return state;
