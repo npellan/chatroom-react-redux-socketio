@@ -1,15 +1,21 @@
 /* eslint-disable no-underscore-dangle */
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import logMiddleware from 'src/middlewares/log';
+import authMiddleware from 'src/middlewares/auth';
 import reducer from './reducer';
 
-// On créé le store et on lui donne le réduceur en paramètre
-// Afin d'initialiser tout ça et de permettre de traduire
-// des intentions en nouveau state
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// On créé le store en lui donnant le reducer afin transformer les actions
+// en changement d'état, et pour calculer aussi l'état initial
 const store = createStore(
-  reducer,
-  /* initialState */
-  window.__REDUX_DEVTOOLS_EXTENSION__
-  && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  reducer, /* preloadedState, */
+  composeEnhancers(
+    applyMiddleware(
+      logMiddleware,
+      authMiddleware,
+    ),
+  ),
 );
 
 export default store;

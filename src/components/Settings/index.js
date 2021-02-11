@@ -9,18 +9,23 @@ import './styles.scss';
 
 // == Composant
 const Settings = ({
-  toggleSettings, settingsOpen, changeEmailValue, changePwdValue, emailValue, pwdValue,
+  toggleSettings, settingsOpen, changeemail, changepassword, email, password, onLogin, loading,
 }) => {
   const openCloseSettings = () => {
     toggleSettings();
   };
 
   const handleEmailChange = (event) => {
-    changeEmailValue(event.target.value);
+    changeemail(event.target.value);
   };
 
   const handlePwdChange = (event) => {
-    changePwdValue(event.target.value);
+    changepassword(event.target.value);
+  };
+
+  const handleSubmitSettings = (event) => {
+    event.preventDefault();
+    onLogin();
   };
 
   return (
@@ -34,26 +39,28 @@ const Settings = ({
       </button>
       <form
         className={classNames('settings__form', { 'settings__form--closed': !settingsOpen })}
+        onSubmit={handleSubmitSettings}
       >
         <input
           type="email"
           className="settings__input"
           placeholder="Email"
           onChange={handleEmailChange}
-          value={emailValue}
+          value={email}
         />
         <input
           type="password"
           className="settings__input"
           placeholder="Mot de passe"
           onChange={handlePwdChange}
-          value={pwdValue}
+          value={password}
         />
         <button
-          type="submit"
           className="settings__submit"
+          type="submit"
+          disabled={loading}
         >
-          Envoyer
+          {loading ? 'Chargement ...' : 'Envoyer'}
         </button>
       </form>
     </div>
@@ -63,19 +70,23 @@ const Settings = ({
 Settings.propTypes = {
   settingsOpen: PropTypes.bool,
   toggleSettings: PropTypes.func,
-  changeEmailValue: PropTypes.func,
-  changePwdValue: PropTypes.func,
-  emailValue: PropTypes.string,
-  pwdValue: PropTypes.string,
+  changeemail: PropTypes.func,
+  changepassword: PropTypes.func,
+  email: PropTypes.string,
+  password: PropTypes.string,
+  loading: PropTypes.bool,
+  onLogin: PropTypes.func,
 };
 
 Settings.defaultProps = {
   settingsOpen: false,
   toggleSettings: () => {},
-  changeEmailValue: () => {},
-  changePwdValue: () => {},
-  emailValue: '',
-  pwdValue: '',
+  changeemail: () => {},
+  changepassword: () => {},
+  email: '',
+  password: '',
+  loading: false,
+  onLogin: () => { },
 };
 
 // == Export

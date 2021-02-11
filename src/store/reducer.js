@@ -8,6 +8,8 @@ import {
   TOGGLE_SETTINGS,
   CHANGE_EMAIL_VALUE,
   CHANGE_PWD_VALUE,
+  SEND_LOGIN,
+  SET_PSEUDO,
 } from '../actions';
 
 const INITIAL_STATE = {
@@ -32,8 +34,9 @@ const INITIAL_STATE = {
   inputValue: '',
   settings: {
     settingsOpen: false,
-    emailValue: '',
-    pwdValue: '',
+    email: '',
+    password: '',
+    loading: false,
   },
 };
 
@@ -68,7 +71,7 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
         ...state,
         settings: {
           ...state.settings,
-          emailValue: action.emailValue,
+          email: action.email,
         },
       };
     case CHANGE_PWD_VALUE:
@@ -76,8 +79,25 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
         ...state,
         settings: {
           ...state.settings,
-          pwdValue: action.pwdValue,
+          password: action.password,
         },
+      };
+    case SEND_LOGIN:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          loading: true,
+        },
+      };
+    case SET_PSEUDO:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          loading: false,
+        },
+        pseudo: action.pseudo,
       };
     default:
       return state;

@@ -3,21 +3,24 @@ import Settings from 'src/components/Settings';
 
 import {
   toggleSettings,
-  changeEmailValue,
-  changePwdValue,
+  changeemail,
+  changepassword,
+  sendLogin,
 } from 'src/actions';
 
 const mapStateToProps = (state) => ({
   settingsOpen: state.settings.settingsOpen,
-  emailValue: state.settings.emailValue,
-  pwdValue: state.settings.pwdValue,
+  email: state.settings.email,
+  password: state.settings.password,
+  loading: state.settings.loading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   // dispatching plain actions
   toggleSettings: () => dispatch(toggleSettings()),
-  changeEmailValue: (emailValue) => dispatch(changeEmailValue(emailValue)),
-  changePwdValue: (pwdValue) => dispatch(changePwdValue(pwdValue)),
+  changeemail: (email) => dispatch(changeemail(email)),
+  changepassword: (password) => dispatch(changepassword(password)),
+  onLogin: () => dispatch(sendLogin()),
 });
 
 export default connect(
