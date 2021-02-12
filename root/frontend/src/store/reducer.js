@@ -4,7 +4,7 @@ import {
 
 import {
   CHANGE_INPUT_VALUE,
-  SUBMIT_NEW_MESSAGE,
+  ADD_MESSAGE,
   TOGGLE_SETTINGS,
   CHANGE_EMAIL_VALUE,
   CHANGE_PWD_VALUE,
@@ -47,7 +47,7 @@ const reducer = (state = INITIAL_STATE, action = {}) => {
         ...state,
         inputValue: action.inputValue,
       };
-    case SUBMIT_NEW_MESSAGE:
+    case ADD_MESSAGE:
       return {
         ...state,
         inputValue: '',

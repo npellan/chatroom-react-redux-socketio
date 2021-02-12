@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 // == Composant
-const Form = ({ inputValue, changeInputValue, submitNewMessage }) => {
+const Form = ({ inputValue, changeInputValue, sendNewMessage }) => {
   const inputEl = useRef(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Form = ({ inputValue, changeInputValue, submitNewMessage }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    submitNewMessage(inputValue);
+    sendNewMessage(inputValue);
   };
 
   return (
@@ -50,13 +50,13 @@ const Form = ({ inputValue, changeInputValue, submitNewMessage }) => {
 Form.propTypes = {
   inputValue: PropTypes.string,
   changeInputValue: PropTypes.func,
-  submitNewMessage: PropTypes.func,
+  sendNewMessage: PropTypes.func,
 };
 
 Form.defaultProps = {
   inputValue: '',
   changeInputValue: () => {},
-  submitNewMessage: () => {},
+  sendNewMessage: () => {},
 };
 
 // == Export

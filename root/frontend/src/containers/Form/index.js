@@ -3,7 +3,7 @@ import Form from 'src/components/Form';
 
 import {
   changeInputValue,
-  submitNewMessage,
+  sendNewMessage,
 } from 'src/actions';
 
 const mapStateToProps = (state) => ({
@@ -13,7 +13,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   // dispatching plain actions
   changeInputValue: (inputValue) => dispatch(changeInputValue(inputValue)),
-  submitNewMessage: (inputValue) => dispatch(submitNewMessage(inputValue)),
+  sendNewMessage: (inputValue) => dispatch(sendNewMessage(inputValue)),
 });
 
 export default connect(
