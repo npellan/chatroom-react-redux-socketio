@@ -34,21 +34,13 @@ Le serveur se lance sur le port 3001.
 
 - `POST http://localhost:3001/login`
 
-=> fournir un objet contenant email et password, par exemple
+=> fournir un objet contenant email et password, avec ces identifiants
 
 ```
 {
-    email: 'bouclierman@herocorp.io',
-    password: 'jennifer'
+    email: 'luke@starwars.io',
+    password: 'skywalker'
 }
-```
-
-```
-Identifiants valides :
-
-- bouclierman@herocorp.io/jennifer
-- acidman@herocorp.io/fructis
-- captain.sportsextremes@herocorp.io/pingpong
 ```
 
 - `POST http://localhost:3001/forgot`
