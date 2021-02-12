@@ -10,7 +10,6 @@ import Message from 'src/containers/Messages/Message';
 // == Composant
 const Messages = ({ messages }) => {
   const messagesContainer = useRef(null);
-
   const scrollToMyRef = () => {
     const scroll = messagesContainer.current.scrollHeight - messagesContainer.current.clientHeight;
     messagesContainer.current.scrollTo(0, scroll);

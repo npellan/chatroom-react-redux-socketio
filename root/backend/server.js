@@ -21,7 +21,7 @@ const db = {
     'luke@starwars.io': {
       password: 'skywalker',
       username: 'Luke',
-      color: '#c23616',
+      color: '#39375B',
     }
   }
 };
@@ -39,7 +39,6 @@ app.use((request, response, next) => {
 });
 
 
-
 // Page d'accueil du serveur : GET /
 app.get('/', (request, response) => {
   response.send(`
@@ -49,8 +48,6 @@ app.get('/', (request, response) => {
       <div>Désormais, tu dois venir utiliser l'API</div>
       <ul style="display: inline-block; margin-top: .2em">
         <li><code>POST http://localhost:${port}/login</code></li>
-        <li><code>POST http://localhost:${port}/forgot</code></li>
-        <li><code>GET http://localhost:${port}/theme/{email}</code></li>
       </ul>
     </div>
   `);
@@ -83,20 +80,6 @@ app.post('/login', (request, response) => {
   }
 });
 
-// Mot de passe oublié : POST /forgot
-app.post('/forgot', (request, response) => {
-  const { email } = request.body;
-  if (db.users[email]) {
-    response.json({
-      pseudo: db.users[email].username
-    });
-  }
-  else {
-    response.status(400).end();
-  }
-});
-
-
 /*
  * Socket.io
  */
@@ -109,34 +92,6 @@ io.on('connection', (ws) => {
     message.id = ++id;
     io.emit('receive_message', message);
   });
-});
-
-/*
- * Theme json
- */
-app.get('/theme/:email', (request, response) => {
-  const email = request.params.email;
-  if (!email) {
-    console.log('<< 400 BAD_REQUEST');
-    response.status(400).end();
-  }
-
-  let color;
-  if (db.users[email] && db.users[email].color) {
-    color = db.users[email].color;
-  }
-
-  // Réponse HTTP adaptée.
-  if (color) {
-    console.log('<< 200 OK', email, color);
-    response.json({
-      color
-    });
-  }
-  else {
-    console.log('<< 401 UNAUTHORIZED');
-    response.status(401).end();
-  }
 });
 
 /*

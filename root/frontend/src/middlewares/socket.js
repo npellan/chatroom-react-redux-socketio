@@ -8,7 +8,6 @@ import {
 let socket = null;
 
 export default (store) => (next) => (action) => {
-  console.log('Action de auth', action.type);
   switch (action.type) {
     case WS_CONNECT:
       socket = window.io('http://localhost:3001');

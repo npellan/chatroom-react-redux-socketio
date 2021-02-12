@@ -5,6 +5,7 @@
  * @param {Array} array
  * @returns {number} maxID
  */
+
 export const getMaxId = (array) => {
   const ids = array.map((item) => item.id);
   const maxID = ids.length === 0 ? 0 : Math.max(...ids);

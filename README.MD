@@ -9,8 +9,8 @@ Télécharger ou cloner le repos.
 
 ### Prérequis
 
-Avoir installé Node sur sa machine (voir [la doc](https://nodejs.org/en/docs/) pour un guide d'installation complet).
-Avoir installé Yarn sur sa machine (voir [la doc](https://yarnpkg.com/getting-started/install) pour un guide d'installation complet).
+* Avoir installé Node sur sa machine (voir [la doc](https://nodejs.org/en/docs/) pour un guide d'installation complet).
+* Avoir installé Yarn sur sa machine (voir [la doc](https://yarnpkg.com/getting-started/install) pour un guide d'installation complet).
 
 ### Installer le projet
 
@@ -43,9 +43,6 @@ Le serveur se lance sur le port 3001.
 }
 ```
 
-- `POST http://localhost:3001/forgot`
-- `GET http://localhost:3001/theme/{email}`
-
 #### Frontend
 
 Naviguer dans le dossier frontend puis Lancer la commande yarn pour installer les dépendances nécessaires au fonctionnement du projet.
@@ -60,6 +57,11 @@ yarn start
 ```
 
 Le serveur se lance sur le port 8080.
+
+## Naviguer dans l'application
+
+Commencez par vous logger grâce à la modale de connexion pré-remplie.
+Vous rentrerez dans la peau de Luke Skywalker et pourrez ainsi dialoguer avec votre père, Dark Vador :wink: :mega:
 
 ## Codé avec
 

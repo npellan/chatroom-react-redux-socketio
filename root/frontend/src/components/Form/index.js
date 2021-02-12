@@ -11,7 +11,6 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 // == Composant
 const Form = ({ inputValue, changeInputValue, sendNewMessage }) => {
   const inputEl = useRef(null);
-
   useEffect(() => {
     inputEl.current.focus();
   }, []);

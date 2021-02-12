@@ -3,8 +3,8 @@ import Settings from 'src/components/Settings';
 
 import {
   toggleSettings,
-  changeemail,
-  changepassword,
+  changeEmail,
+  changePassword,
   sendLogin,
 } from 'src/actions';
 
@@ -18,8 +18,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   // dispatching plain actions
   toggleSettings: () => dispatch(toggleSettings()),
-  changeemail: (email) => dispatch(changeemail(email)),
-  changepassword: (password) => dispatch(changepassword(password)),
+  changeEmail: (email) => dispatch(changeEmail(email)),
+  changePassword: (password) => dispatch(changePassword(password)),
   onLogin: () => dispatch(sendLogin()),
 });
 

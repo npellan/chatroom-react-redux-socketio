@@ -9,18 +9,18 @@ import './styles.scss';
 
 // == Composant
 const Settings = ({
-  toggleSettings, settingsOpen, changeemail, changepassword, email, password, onLogin, loading,
+  toggleSettings, settingsOpen, changeEmail, changePassword, email, password, onLogin, loading,
 }) => {
   const openCloseSettings = () => {
     toggleSettings();
   };
 
   const handleEmailChange = (event) => {
-    changeemail(event.target.value);
+    changeEmail(event.target.value);
   };
 
   const handlePwdChange = (event) => {
-    changepassword(event.target.value);
+    changePassword(event.target.value);
   };
 
   const handleSubmitSettings = (event) => {
@@ -70,8 +70,8 @@ const Settings = ({
 Settings.propTypes = {
   settingsOpen: PropTypes.bool,
   toggleSettings: PropTypes.func,
-  changeemail: PropTypes.func,
-  changepassword: PropTypes.func,
+  changeEmail: PropTypes.func,
+  changePassword: PropTypes.func,
   email: PropTypes.string,
   password: PropTypes.string,
   loading: PropTypes.bool,
@@ -81,8 +81,8 @@ Settings.propTypes = {
 Settings.defaultProps = {
   settingsOpen: false,
   toggleSettings: () => {},
-  changeemail: () => {},
-  changepassword: () => {},
+  changeEmail: () => {},
+  changePassword: () => {},
   email: '',
   password: '',
   loading: false,
