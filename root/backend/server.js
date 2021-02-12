@@ -114,9 +114,10 @@ let id = 0;
 io.on('connection', (ws) => {
   console.log('>> socket.io - connected');
   ws.on('send_message', (message) => {
+    console.log("Received message", message);
     // eslint-disable-next-line no-plusplus
     message.id = ++id;
-    io.emit('send_message', message);
+    io.emit('receive_message', message);
   });
 });
 

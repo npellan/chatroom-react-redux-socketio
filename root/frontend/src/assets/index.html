@@ -7,6 +7,17 @@
         <title>Modele</title>
     </head>
     <body>
-        <div id="root"></div>
+		<div id="root"></div>
+
+	<script src="http://localhost:3001/socket.io/socket.io.js"></script>
+	<script>
+		const socket = io('http://localhost:3001');
+
+		socket.on('receive_message', (message) => {
+			console.log("J'ai reçu un message", message);
+		});
+
+		socket.emit('send_message', {sender: 'Toto', content:'Coucou'});
+	</script>
     </body>
 </html>
