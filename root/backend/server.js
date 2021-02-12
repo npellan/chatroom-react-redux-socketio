@@ -32,6 +32,11 @@ const db = {
       password: 'pingpong',
       username: 'Karin',
       color: '#f0f',
+    },
+    'luke@starwars.io': {
+      password: 'skywalker',
+      username: 'Luke',
+      color: '#c23616',
     }
   }
 };

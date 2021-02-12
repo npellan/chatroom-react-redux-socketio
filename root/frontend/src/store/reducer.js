@@ -16,26 +16,21 @@ const INITIAL_STATE = {
   messages: [
     {
       id: 1,
-      sender: 'Ami',
-      content: 'Salut !',
+      sender: 'Dark Vador',
+      content: 'Luke...',
     },
     {
       id: 2,
-      sender: 'Ami',
-      content: 'Pfiou quel temps !',
-    },
-    {
-      id: 3,
-      sender: 'Ami',
-      content: 'T\'as passé une bonne journée ?',
+      sender: 'Dark Vador',
+      content: 'Je suis ton père',
     },
   ],
   pseudo: 'Moi',
   inputValue: '',
   settings: {
     settingsOpen: false,
-    email: '',
-    password: '',
+    email: 'luke@starwars.io',
+    password: 'skywalker',
     loading: false,
   },
 };
